@@ -1,0 +1,28 @@
+package Selenium
+import mport java.util.ArrayList
+import io.github.bonigarcia.wdm.WebDriverManager
+import org.openqa.selenium.By
+import org.openqa.selenium.Keys
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.chrome.ChromeDriver
+import java.util.ArrayList
+
+public class Selenum1 {
+    public static class Selenium {
+
+        public static void main(String[] args)
+
+        private (Webelement)driver
+        private Object keysToSend
+        //Zadatak 3
+    //Otvoriti bing pretrazivac, pretrazite 'Wikipedia'
+    //otvorite wikipedia stranicu i na njoj uradite pretragu 'Nikola Tesla'
+
+        Webelement =driver.findElement(By.id "saerch")
+        ArrayList<>
+    }
+}
+//Zadatak 2
+//Otvoriti browser i jos 5 tabova
+//Na svakom tabu otvoriti URL po zelji
+//Zatvoriti sve tabove osim onog gde je otvoren Google
