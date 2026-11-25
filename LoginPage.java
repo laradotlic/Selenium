@@ -4,49 +4,51 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPage extends BaseTest{
+public class LoginPage {
 
     WebDriver driver;
-
     WebElement usernameField;
     WebElement passwordField;
     WebElement submitButton;
-
+    WebElement error;
     public LoginPage(WebDriver driver) {
         this.driver = driver;
-
-        usernameField = driver.findElement(By.id("user-name"));
-        passwordField = driver.findElement(By.id("password"));
-        submitButton = driver.findElement(By.id("login-button"));
     }
 
     public WebElement getUsernameField() {
-        return usernameField;
+        return driver.findElement(By.id("username"));
     }
 
     public WebElement getPasswordField() {
-        return passwordField;
+        return driver.findElement(By.id("password"));
     }
 
     public WebElement getSubmitButton() {
-        return submitButton;
+        return driver.findElement(By.id("submit"));
     }
 
+    public WebElement getError() {
+        return driver.findElement(By.id("error"));
+    }
+
+    //-----------------------
+
     public void inputUsername(String username) {
-        usernameField.sendKeys(username);
+        getUsernameField().clear();
+        getUsernameField().sendKeys(username);
     }
 
     public void inputPassword(String password) {
-        passwordField.sendKeys(password);
+        getPasswordField().clear();
+        getPasswordField().sendKeys(password);
     }
 
-    public void clickSubmitButton() {
-        submitButton.click();
+    public void clickOnSubmitButton() {
+        getSubmitButton().click();
     }
 
-    public void login(String username, String password) {
-        inputUsername(username);
-        inputPassword(password);
-        clickSubmitButton();
+    public String errorText() {
+        return getError().getText();
     }
+
 }

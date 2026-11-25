@@ -1,22 +1,25 @@
 package Pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class HomepagePage {
-    webDriver driver;
-WebElement praticeButton;
 
-    public HomepagePage(webDriver driver) {
+    WebDriver driver;
+    WebElement practiceButton;
+    public HomepagePage(WebDriver driver) {
         this.driver = driver;
     }
 
-
-    public WebElement getPraticeButton() {
-        return driver.findElement(By.id ());
+    public WebElement getPracticeButton() {
+        return driver.findElement(By.id("menu-item-20"));
     }
 
-    public void  clickOnPracticeButton(){
-        praticeButton.click();
+    //---------------------------
+
+    public void clickOnPracticeButton() {
+        getPracticeButton().click();
     }
 
 }
