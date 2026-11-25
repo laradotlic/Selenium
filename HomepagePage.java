@@ -1,25 +1,34 @@
 package Pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import Base.BaseTest;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class HomepagePage {
+public class LoginPage extends BaseTest {
 
-    WebDriver driver;
-    WebElement practiceButton;
-    public HomepagePage(WebDriver driver) {
-        this.driver = driver;
+    @FindBy(id = "username")
+    WebElement usernameField;
+
+    @FindBy(id = "password")
+    WebElement passwordField;
+
+    @FindBy(id = "login")
+    WebElement loginButton;
+
+    public LoginPage() {
+        PageFactory.initElements(driver, this);
     }
 
-    public WebElement getPracticeButton() {
-        return driver.findElement(By.id("menu-item-20"));
+    public void enterUsername(String username) {
+        usernameField.sendKeys(username);
     }
 
-    //---------------------------
-
-    public void clickOnPracticeButton() {
-        getPracticeButton().click();
+    public void enterPassword(String password) {
+        passwordField.sendKeys(password);
     }
 
+    public void clickLogin() {
+        loginButton.click();
+    }
 }
