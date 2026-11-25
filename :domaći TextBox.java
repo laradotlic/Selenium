@@ -1,0 +1,1 @@
+Automation of the DemoQA Text Box form using Selenium WebDriver and the Page Factory design pattern. The test fills in all form fields, submits the form, and verifies that the entered data is correctly displayed.
